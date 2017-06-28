@@ -17,6 +17,9 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
 
     protected static final int KEY = Integer.MAX_VALUE >> 1;
 
+    /**
+     * 是否将滑动数据作用于每个子View
+     */
     private boolean mIsSplitChildViews = true;
 
     public BaseTransformer() {
@@ -56,15 +59,6 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
         }
         //判断状态更新mProgressLevelState
         int currProgressLevelState;
-        if (fraction >= 0.75f) {
-            currProgressLevelState = PROGRESS_LEVEL_STATE0;
-        } else if (fraction >= 0.5f) {
-            currProgressLevelState = PROGRESS_LEVEL_STATE1;
-        } else if (fraction >= 0.25f) {
-            currProgressLevelState = PROGRESS_LEVEL_STATE2;
-        } else {
-            currProgressLevelState = PROGRESS_LEVEL_STATE3;
-        }
         if (fraction <= 0.25f) {
             currProgressLevelState = PROGRESS_LEVEL_STATE0;
         } else if (fraction <= 0.5f) {
@@ -83,7 +77,7 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
     }
 
     /**
-     * 参数不一定需要全部使用
+     * 重写这个方法的时候，参数不一定需要全部使用，按需求使用
      *
      * @param page
      * @param position 本次滑动的位置-1-0-1，float
@@ -93,7 +87,7 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
     }
 
     /**
-     * 参数不一定需要全部使用
+     * 重写这个方法的时候，参数不一定需要全部使用，按需求使用
      *
      * @param parent
      * @param child
@@ -106,6 +100,10 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
 
     private int mProgressLevelState = PROGRESS_LEVEL_STATE0;
 
+    /**
+     * 自定义View实现这个接口，就能够获得滑动到不同长度时候四种状态见
+     * {@link BaseTransformer#reportProgressState(Object, float)} }
+     */
     public interface OnStateChangeListener {
         int PROGRESS_LEVEL_STATE0 = 0;
         int PROGRESS_LEVEL_STATE1 = 1;
