@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android:oneshot：是否循环;true-不循环, false-循环 -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/run_s1" android:duration="80"></item>
+    <item android:drawable="@drawable/run_s2" android:duration="80"></item>
+    <item android:drawable="@drawable/run_s3" android:duration="80"></item>
+    <item android:drawable="@drawable/run_s4" android:duration="80"></item>
+    <item android:drawable="@drawable/run_s5" android:duration="80"></item>
+    <item android:drawable="@drawable/run_s6" android:duration="80"></item>
+    <item android:drawable="@drawable/run_s7" android:duration="80"></item>
+    <item android:drawable="@drawable/run_s8" android:duration="80"></item>
+</animation-list>

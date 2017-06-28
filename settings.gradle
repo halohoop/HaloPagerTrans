@@ -1,0 +1,1 @@
+include ':halopagertrans_lib', ':halopagertrans_sample', ':java_test'
