@@ -57,17 +57,17 @@
             complexChildsTransformer.addTransformer(new ChildsAlphaTransformer());
             complexChildsTransformer.addTransformer(new ChildsScaleTransformer());
             //choose one or more Transformers to add into the complex one
-    //        complexChildsTransformer.addTransformer(new PageDefaultTransformer());//普通vp滑动
-    //        complexChildsTransformer.addTransformer(new PageAlphaTransFormer(false/*可修改*/, true/*可修改*/));//透明度
-    //        complexChildsTransformer.addTransformer(new PageCubeInnerTransformer(/*可传参数*/));//立方体内部
-    //        complexChildsTransformer.addTransformer(new PageCubeOuterTransformer());//立方体外部
-    //        complexChildsTransformer.addTransformer(new PageDepthTransformer(/*可传参数*/));//深度变化
-    //        complexChildsTransformer.addTransformer(new PageExtrudingTransformer());//挤压
+            //complexChildsTransformer.addTransformer(new PageDefaultTransformer());//普通vp滑动
+            //complexChildsTransformer.addTransformer(new PageAlphaTransFormer(false/*可修改*/, true/*可修改*/));//透明度
+            //complexChildsTransformer.addTransformer(new PageCubeInnerTransformer(/*可传参数*/));//立方体内部
+            //complexChildsTransformer.addTransformer(new PageCubeOuterTransformer());//立方体外部
+            //complexChildsTransformer.addTransformer(new PageDepthTransformer(/*可传参数*/));//深度变化
+            //complexChildsTransformer.addTransformer(new PageExtrudingTransformer());//挤压
             complexChildsTransformer.addTransformer(new PageFlipTransformer(/*可传参数*/));//flip
-    //        complexChildsTransformer.addTransformer(new PageInRightUpTransformer());//右上到左下
-    //        complexChildsTransformer.addTransformer(new PageInRightDownTransformer());//右下到左上
-    //        complexChildsTransformer.addTransformer(new PageRotateTransformer(/*可传参数*/));//旋转
-    //        complexChildsTransformer.addTransformer(new PageZoomOutTransformer(/*可传参数*/));//Zoom out
+            //complexChildsTransformer.addTransformer(new PageInRightUpTransformer());//右上到左下
+            //complexChildsTransformer.addTransformer(new PageInRightDownTransformer());//右下到左上
+            //complexChildsTransformer.addTransformer(new PageRotateTransformer(/*可传参数*/));//旋转
+            //complexChildsTransformer.addTransformer(new PageZoomOutTransformer(/*可传参数*/));//Zoom out
             vp.setPageTransformer(true, complexChildsTransformer);
 
 ## More Detail
