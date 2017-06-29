@@ -2,6 +2,8 @@
 
 ## 效果
 
+![demo0](demo0.gif)
+
 ## HOW TO USE
 
 ### Set Animation for every single view
