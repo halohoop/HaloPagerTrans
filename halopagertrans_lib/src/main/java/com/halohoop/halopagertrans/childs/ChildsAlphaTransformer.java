@@ -16,7 +16,7 @@ public class ChildsAlphaTransformer extends BaseChildsTransformer {
     public static final int KEY_MIN_ALPHA = KEY + 20;
 
     @Override
-    protected void transformPage(View parent, View child, int childIndex, float position, float fraction) {
+    protected void transformPageChilds(View parent, View child, int childIndex, float position, float fraction) {
         final Object tagMinAlpha = child.getTag(KEY_MIN_ALPHA);
         if (tagMinAlpha != null) {
             final float _tagMinAlpha = (float) tagMinAlpha;

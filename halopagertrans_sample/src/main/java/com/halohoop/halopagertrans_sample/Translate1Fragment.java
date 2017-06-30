@@ -12,6 +12,7 @@ import com.halohoop.halopagertrans.childs.ChildsRotateTransformer;
 import com.halohoop.halopagertrans.childs.ChildsTranslateTransformer;
 
 import static android.content.ContentValues.TAG;
+import static com.halohoop.halopagertrans_sample.R.id.imageView_moon;
 
 public class Translate1Fragment extends Fragment {
 
@@ -61,6 +62,12 @@ public class Translate1Fragment extends Fragment {
         imageView1.setTag(ChildsRotateTransformer.KEY_ROTATE, 90f);
         imageView1.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTX_RATIO, 1f);
         imageView1.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTY_RATIO, 0.5f);
+
+        View imageView_sun = view.findViewById(R.id.imageView_sun);
+        imageView_sun.setTag(ChildsTranslateTransformer.KEY_OFFSET_X_FACTOR, 2f);
+        imageView_sun.setTag(ChildsTranslateTransformer.KEY_IS_REVERSE, true);
+        imageView_sun.setTag(ChildsRotateTransformer.KEY_ROTATE, 90f);
+        imageView_sun.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTY_RATIO, 1.5f);
     }
 
     @Override

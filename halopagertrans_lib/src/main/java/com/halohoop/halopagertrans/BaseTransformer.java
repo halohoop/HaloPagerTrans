@@ -46,7 +46,7 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
                     final int childCount = vg.getChildCount();
                     for (int i = 0; i < childCount; i++) {
                         reportProgressState(vg.getChildAt(i), fraction);
-                        transformPage(view, vg.getChildAt(i), i, pos, fraction);
+                        transformPageChilds(view, vg.getChildAt(i), i, pos, fraction);
                     }
                 }
             }
@@ -95,7 +95,7 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
      * @param position   本次滑动的位置-1-0-1，float
      * @param fraction   本次滑动的百分比
      */
-    protected void transformPage(View parent, View child, int childIndex, float position, float fraction) {
+    protected void transformPageChilds(View parent, View child, int childIndex, float position, float fraction) {
     }
 
     private int mProgressLevelState = PROGRESS_LEVEL_STATE0;

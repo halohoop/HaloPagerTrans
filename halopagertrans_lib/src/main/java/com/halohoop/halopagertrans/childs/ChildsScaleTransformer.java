@@ -15,7 +15,7 @@ public class ChildsScaleTransformer extends BaseChildsTransformer {
     public static final float DEFAULT_MIN_SCALE = 0;
 
     @Override
-    protected void transformPage(View parent, View child, int childIndex, float position, float fraction) {
+    protected void transformPageChilds(View parent, View child, int childIndex, float position, float fraction) {
         final Object tagPivotX = child.getTag(KEY_SCALE_PIVOTX);
         final Object tagPivotY = child.getTag(KEY_SCALE_PIVOTY);
         final Object tagMinScaleX = child.getTag(KEY_MIN_SCALE_X);

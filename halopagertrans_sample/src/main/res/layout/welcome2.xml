@@ -104,4 +104,11 @@
         android:layout_marginTop="19dp"
         android:src="@mipmap/sec_6" />
 
+    <ImageView
+        android:id="@+id/imageView_moon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/moon" />
+
 </RelativeLayout>

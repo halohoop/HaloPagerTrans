@@ -16,7 +16,7 @@ public class ChildsRotateTransformer extends BaseChildsTransformer {
     public static final int KEY_ROTATE_PIVOTY_RATIO = KEY_ROTATE + 3;
 
     @Override
-    protected void transformPage(View parent, View child, int childIndex, float position, float fraction) {
+    protected void transformPageChilds(View parent, View child, int childIndex, float position, float fraction) {
         final Object tagPivotXRatio = child.getTag(KEY_ROTATE_PIVOTX_RATIO);
         final Object tagPivotYRatio = child.getTag(KEY_ROTATE_PIVOTY_RATIO);
         final Object tagDegree = child.getTag(KEY_ROTATE);

@@ -21,7 +21,7 @@ public class ChildsTranslateTransformer extends BaseChildsTransformer {
     public static final int KEY_OFFSET_Y_FACTOR = KEY_IS_REVERSE + 3;
 
     @Override
-    protected void transformPage(View parent, View child, int childIndex, float position, float fraction) {
+    protected void transformPageChilds(View parent, View child, int childIndex, float position, float fraction) {
         final Object tagIsReverse = child.getTag(KEY_IS_REVERSE);
         final Object tagKeyMarginWhenReverse = child.getTag(KEY_MARGIN_WHEN_REVERSE);
         final Object tagkeyOffsetXFactor = child.getTag(KEY_OFFSET_X_FACTOR);

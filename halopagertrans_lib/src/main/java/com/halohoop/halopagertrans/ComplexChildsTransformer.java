@@ -35,7 +35,7 @@ public class ComplexChildsTransformer extends BaseTransformer {
     }
 
     @Override
-    protected void transformPage(View parent, View child, int childIndex, float position, float fraction) {
+    protected void transformPageChilds(View parent, View child, int childIndex, float position, float fraction) {
         final ArrayList<BaseTransformer> transformers = mTransformers;
         final View _page = parent;
         final View _child = child;
@@ -46,7 +46,7 @@ public class ComplexChildsTransformer extends BaseTransformer {
             final int size = transformers.size();
             for (int i = 0; i < size; i++) {
                 final BaseTransformer baseTransformer = transformers.get(i);
-                baseTransformer.transformPage(_page, _child, _childIndex, _position, _fraction);
+                baseTransformer.transformPageChilds(_page, _child, _childIndex, _position, _fraction);
             }
         }
     }
