@@ -68,7 +68,7 @@ public class Translate2Fragment extends Fragment {
 
         View imageView_moon = view.findViewById(R.id.imageView_moon);
         imageView_moon.setTag(ChildsTranslateTransformer.KEY_OFFSET_X_FACTOR, 2f);
-        imageView_moon.setTag(ChildsTranslateTransformer.KEY_IS_REVERSE, true);
+        imageView_moon.setTag(ChildsTranslateTransformer.KEY_IS_X_REVERSE, true);
         imageView_moon.setTag(ChildsRotateTransformer.KEY_ROTATE, 90f);
         imageView_moon.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTY_RATIO, 1.5f);
     }

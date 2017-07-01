@@ -35,12 +35,12 @@ public class SunFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         View imageView3 = view.findViewById(R.id.imageView3);
         imageView3.setTag(ChildsTranslateTransformer.KEY_OFFSET_X_FACTOR, 2f);
-        imageView3.setTag(ChildsTranslateTransformer.KEY_IS_REVERSE, true);
-        imageView3.setTag(ChildsTranslateTransformer.KEY_MARGIN_WHEN_REVERSE, -30f);
+        imageView3.setTag(ChildsTranslateTransformer.KEY_IS_X_REVERSE, true);
+        imageView3.setTag(ChildsTranslateTransformer.KEY_MARGIN_X_WHEN_REVERSE, -30f);
 
         View imageView_sun = view.findViewById(R.id.imageView_sun);
         imageView_sun.setTag(ChildsTranslateTransformer.KEY_OFFSET_X_FACTOR, 2f);
-        imageView_sun.setTag(ChildsTranslateTransformer.KEY_IS_REVERSE, true);
+        imageView_sun.setTag(ChildsTranslateTransformer.KEY_IS_X_REVERSE, true);
         imageView_sun.setTag(ChildsRotateTransformer.KEY_ROTATE, 90f);
         imageView_sun.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTY_RATIO, 1.5f);
 //        imageView_sun.setTag(ChildsScaleTransformer.KEY_SCALE_PIVOTX, 0.5f);

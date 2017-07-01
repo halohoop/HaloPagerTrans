@@ -38,8 +38,12 @@ public class FlowerFragment extends Fragment {
         imageView_flower.setTag(ChildsRotateTransformer.KEY_ROTATE, -200f);
         imageView_flower.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTX_RATIO, 1.0f);
         imageView_flower.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTY_RATIO, .65f);
+
 //        View imageView_girl = view.findViewById(R.id.imageView_girl);
         View imageView_girl_face_red = view.findViewById(R.id.imageView_girl_face_red);
         imageView_girl_face_red.setTag(ChildsAlphaTransformer.KEY_MIN_ALPHA, 0f);
+
+        View imageView_heart = view.findViewById(R.id.imageView_heart);
+        imageView_heart.setTag(ChildsTranslateTransformer.KEY_OFFSET_Y_FACTOR, 2.0f);
     }
 }

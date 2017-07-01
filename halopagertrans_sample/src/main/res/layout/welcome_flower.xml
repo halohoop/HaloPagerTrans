@@ -6,6 +6,15 @@
     android:background="#35D8BB">
 
     <ImageView
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="125dp"
+        android:id="@+id/imageView_heart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/heart" />
+
+    <ImageView
         android:id="@+id/imageView_girl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,6 +48,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="1.旋转动画\n2.透明度动画(女孩腮红)" />
+        android:text="1.旋转动画\n2.透明度动画(女孩腮红)\n3.平移动画" />
 
 </RelativeLayout>

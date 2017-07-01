@@ -12,7 +12,6 @@ import com.halohoop.halopagertrans.childs.ChildsRotateTransformer;
 import com.halohoop.halopagertrans.childs.ChildsTranslateTransformer;
 
 import static android.content.ContentValues.TAG;
-import static com.halohoop.halopagertrans_sample.R.id.imageView_moon;
 
 public class Translate1Fragment extends Fragment {
 
@@ -35,15 +34,15 @@ public class Translate1Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         View imageView3 = view.findViewById(R.id.imageView3);
         imageView3.setTag(ChildsTranslateTransformer.KEY_OFFSET_X_FACTOR, 2f);
-        imageView3.setTag(ChildsTranslateTransformer.KEY_IS_REVERSE, true);
-        imageView3.setTag(ChildsTranslateTransformer.KEY_MARGIN_WHEN_REVERSE, -30f);
+        imageView3.setTag(ChildsTranslateTransformer.KEY_IS_X_REVERSE, true);
+        imageView3.setTag(ChildsTranslateTransformer.KEY_MARGIN_X_WHEN_REVERSE, -30f);
 //        imageView3.setTag(ChildsRotateTransformer.KEY_ROTATE,360f);
 //		imageView3.setTag(ChildsAlphaTransformer.KEY_MIN_ALPHA,0.5f);
 
         View line = view.findViewById(R.id.line);
         line.setTag(ChildsTranslateTransformer.KEY_OFFSET_X_FACTOR, 2f);
-        line.setTag(ChildsTranslateTransformer.KEY_IS_REVERSE, true);
-        line.setTag(ChildsTranslateTransformer.KEY_MARGIN_WHEN_REVERSE, -70f);
+        line.setTag(ChildsTranslateTransformer.KEY_IS_X_REVERSE, true);
+        line.setTag(ChildsTranslateTransformer.KEY_MARGIN_X_WHEN_REVERSE, -70f);
 
         View ll_top = view.findViewById(R.id.ll_top);
         ll_top.setTag(ChildsTranslateTransformer.KEY_OFFSET_X_FACTOR, 2f);
@@ -65,7 +64,7 @@ public class Translate1Fragment extends Fragment {
 
         View imageView_sun = view.findViewById(R.id.imageView_sun);
         imageView_sun.setTag(ChildsTranslateTransformer.KEY_OFFSET_X_FACTOR, 2f);
-        imageView_sun.setTag(ChildsTranslateTransformer.KEY_IS_REVERSE, true);
+        imageView_sun.setTag(ChildsTranslateTransformer.KEY_IS_X_REVERSE, true);
         imageView_sun.setTag(ChildsRotateTransformer.KEY_ROTATE, 90f);
         imageView_sun.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTY_RATIO, 1.5f);
     }
