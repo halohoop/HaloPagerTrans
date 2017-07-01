@@ -11,18 +11,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.halohoop.halopagertrans.ComplexChildsTransformer;
+import com.halohoop.halopagertrans.childs.ChildsAlphaTransformer;
 import com.halohoop.halopagertrans.childs.ChildsRotateTransformer;
+import com.halohoop.halopagertrans.childs.ChildsScaleTransformer;
 import com.halohoop.halopagertrans.childs.ChildsTranslateTransformer;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
 
     private int[] layouts = {
+            R.layout.welcome_sun,
+            R.layout.welcome_moon,
+            R.layout.welcome_flower,
             R.layout.welcome1,
             R.layout.welcome2,
-            R.layout.welcome3,
-            R.layout.welcome3,
-            R.layout.welcome3,
-            R.layout.welcome4,
             R.layout.welcome3,
     };
     private int[] colors = {
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             R.color.bg3,
             R.color.bg4,
             R.color.bg0,
-            R.color.bg1,
     };
     private ViewPager vp;
     private ColorDrawable colorDrawable;
@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         ComplexChildsTransformer complexChildsTransformer = new ComplexChildsTransformer();
         complexChildsTransformer.addTransformer(new ChildsTranslateTransformer());
         complexChildsTransformer.addTransformer(new ChildsRotateTransformer());
-//        complexChildsTransformer.addTransformer(new ChildsAlphaTransformer());
-//        complexChildsTransformer.addTransformer(new ChildsScaleTransformer());
+        complexChildsTransformer.addTransformer(new ChildsAlphaTransformer());
+        complexChildsTransformer.addTransformer(new ChildsScaleTransformer());
 //        complexChildsTransformer.addTransformer(new PageDefaultTransformer());//普通vp滑动
 //        complexChildsTransformer.addTransformer(new PageAlphaTransFormer(false/*可修改*/, true/*可修改*/));//透明度
 //        complexChildsTransformer.addTransformer(new PageCubeInnerTransformer(/*可传参数*/));//立方体内部
@@ -119,18 +119,16 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         private Fragment getFragment(int pos) {
             switch (pos) {
                 case 0:
-                    return new Translate1Fragment();
+                    return new SunFragment();
                 case 1:
-                    return new Translate2Fragment();
+                    return new MoonFragment();
                 case 2:
-                    return new Translate3Fragment();
+                    return new FlowerFragment();
                 case 3:
-                    return new Translate3Fragment();
+                    return new Translate1Fragment();
                 case 4:
-                    return new Translate3Fragment();
+                    return new Translate2Fragment();
                 case 5:
-                    return new Translate4Fragment();
-                case 6:
                     return new Translate3Fragment();
                 default:
                     return null;
@@ -139,7 +137,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
         @Override
         public int getCount() {
-            // TODO Auto-generated method stub
             return layouts.length;
         }
 

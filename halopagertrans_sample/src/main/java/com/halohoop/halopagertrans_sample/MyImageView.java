@@ -2,6 +2,7 @@ package com.halohoop.halopagertrans_sample;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -19,6 +20,7 @@ public class MyImageView extends AppCompatImageView implements BaseTransformer.O
 
     private AnimationDrawable drawable;
     private AnimationDrawable drawable_s;
+    private Drawable drawable_kneel;
 
     public MyImageView(Context context) {
         super(context);
@@ -38,17 +40,23 @@ public class MyImageView extends AppCompatImageView implements BaseTransformer.O
     private void init(Context context) {
         drawable_s = (AnimationDrawable) context.getDrawable(R.drawable.run_s);
         drawable = (AnimationDrawable) context.getDrawable(R.drawable.run);
+        drawable_kneel = context.getDrawable(R.drawable.run_on_kneel);
     }
 
     @Override
-    public void onStateChange(int progressState) {
+    public void onStateChange(int progressState, float positon) {
         Log.i(TAG, "onStateChange: " + progressState);
-        if (progressState <= BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE1) {
+        if (progressState <= BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE2) {
+            //改成大跑
+            setImageDrawable(drawable_kneel);
+            drawable_s.stop();
+            drawable.stop();
+        } else if (progressState <= BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE3) {
             //改成大跑
             setImageDrawable(drawable);
             drawable_s.stop();
             drawable.start();
-        } else if (progressState <= BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE3) {
+        } else if (progressState <= BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE7) {
             //小跑快速，一开始就回调
             setImageDrawable(drawable_s);
             drawable.stop();

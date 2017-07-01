@@ -2,6 +2,8 @@ package com.halohoop.halopagertrans;
 
 import android.view.View;
 
+import com.halohoop.halopagertrans.childs.ChildsScaleTransformer;
+
 import java.util.ArrayList;
 
 /**

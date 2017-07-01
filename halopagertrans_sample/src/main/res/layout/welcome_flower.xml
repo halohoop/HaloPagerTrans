@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#35D8BB">
+
+    <ImageView
+        android:id="@+id/imageView_girl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/girl" />
+
+    <ImageView
+        android:id="@+id/imageView_girl_face_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/face_red_dot" />
+
+    <ImageView
+        android:id="@+id/imageView_flower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/imageView_girl_face_red"
+        android:src="@mipmap/flowers" />
+
+    <ImageView
+        android:id="@+id/imageView_man_give_flower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/imageView_flower"
+        android:src="@mipmap/man_give_flower" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1.旋转动画\n2.透明度动画(女孩腮红)" />
+
+</RelativeLayout>

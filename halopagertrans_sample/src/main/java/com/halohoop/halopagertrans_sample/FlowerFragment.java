@@ -14,7 +14,7 @@ import com.halohoop.halopagertrans.childs.ChildsTranslateTransformer;
 
 import java.util.Random;
 
-public class Translate4Fragment extends Fragment {
+public class FlowerFragment extends Fragment {
 
     @Override
     @Nullable
@@ -33,10 +33,13 @@ public class Translate4Fragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        View imageView_man_give_flower = view.findViewById(R.id.imageView_man_give_flower);
+//        View imageView_man_give_flower = view.findViewById(R.id.imageView_man_give_flower);
         View imageView_flower = view.findViewById(R.id.imageView_flower);
         imageView_flower.setTag(ChildsRotateTransformer.KEY_ROTATE, -200f);
         imageView_flower.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTX_RATIO, 1.0f);
         imageView_flower.setTag(ChildsRotateTransformer.KEY_ROTATE_PIVOTY_RATIO, .65f);
+//        View imageView_girl = view.findViewById(R.id.imageView_girl);
+        View imageView_girl_face_red = view.findViewById(R.id.imageView_girl_face_red);
+        imageView_girl_face_red.setTag(ChildsAlphaTransformer.KEY_MIN_ALPHA, 0f);
     }
 }

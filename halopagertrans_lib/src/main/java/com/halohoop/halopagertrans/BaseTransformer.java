@@ -8,6 +8,10 @@ import static com.halohoop.halopagertrans.BaseTransformer.OnStateChangeListener.
 import static com.halohoop.halopagertrans.BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE1;
 import static com.halohoop.halopagertrans.BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE2;
 import static com.halohoop.halopagertrans.BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE3;
+import static com.halohoop.halopagertrans.BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE4;
+import static com.halohoop.halopagertrans.BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE5;
+import static com.halohoop.halopagertrans.BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE6;
+import static com.halohoop.halopagertrans.BaseTransformer.OnStateChangeListener.PROGRESS_LEVEL_STATE7;
 
 /**
  * Created by Pooholah on 2017/6/22.
@@ -45,7 +49,7 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
                     final ViewGroup vg = ViewGroup.class.cast(view);
                     final int childCount = vg.getChildCount();
                     for (int i = 0; i < childCount; i++) {
-                        reportProgressState(vg.getChildAt(i), fraction);
+                        reportProgressState(vg.getChildAt(i), pos, fraction);
                         transformPageChilds(view, vg.getChildAt(i), i, pos, fraction);
                     }
                 }
@@ -53,26 +57,34 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
         }
     }
 
-    private void reportProgressState(Object obj, float fraction) {
+    private void reportProgressState(Object obj, float position, float fraction) {
         if (obj == null || !(obj instanceof OnStateChangeListener)) {
             return;
         }
         //判断状态更新mProgressLevelState
         int currProgressLevelState;
-        if (fraction <= 0.25f) {
+        if (fraction <= 0.125f) {
             currProgressLevelState = PROGRESS_LEVEL_STATE0;
-        } else if (fraction <= 0.5f) {
+        } else if (fraction <= 0.25f) {
             currProgressLevelState = PROGRESS_LEVEL_STATE1;
-        } else if (fraction <= 0.75f) {
+        } else if (fraction <= 0.375f) {
             currProgressLevelState = PROGRESS_LEVEL_STATE2;
-        } else {
+        } else if (fraction <= 0.5f) {
             currProgressLevelState = PROGRESS_LEVEL_STATE3;
+        } else if (fraction <= 0.625f) {
+            currProgressLevelState = PROGRESS_LEVEL_STATE4;
+        } else if (fraction <= 0.75f) {
+            currProgressLevelState = PROGRESS_LEVEL_STATE5;
+        } else if (fraction <= 0.875f) {
+            currProgressLevelState = PROGRESS_LEVEL_STATE6;
+        } else {
+            currProgressLevelState = PROGRESS_LEVEL_STATE7;
         }
         if (mProgressLevelState != currProgressLevelState) {
             final OnStateChangeListener onStateChangeListener = (OnStateChangeListener) obj;
             mProgressLevelState = currProgressLevelState;
             //和上次不一样，回调OnStateChangeListener
-            onStateChangeListener.onStateChange(mProgressLevelState);
+            onStateChangeListener.onStateChange(mProgressLevelState, position);
         }
     }
 
@@ -102,17 +114,21 @@ public abstract class BaseTransformer implements ViewPager.PageTransformer {
 
     /**
      * 自定义View实现这个接口，就能够获得滑动到不同长度时候四种状态见
-     * {@link BaseTransformer#reportProgressState(Object, float)} }
+     * {@link BaseTransformer#reportProgressState(Object, float, float)} }
      */
     public interface OnStateChangeListener {
         int PROGRESS_LEVEL_STATE0 = 0;
         int PROGRESS_LEVEL_STATE1 = 1;
         int PROGRESS_LEVEL_STATE2 = 2;
         int PROGRESS_LEVEL_STATE3 = 3;
+        int PROGRESS_LEVEL_STATE4 = 4;
+        int PROGRESS_LEVEL_STATE5 = 5;
+        int PROGRESS_LEVEL_STATE6 = 6;
+        int PROGRESS_LEVEL_STATE7 = 7;
 
         /**
          * @param progressState PROGRESS_LEVEL_STATE0-3,four progress state.
          */
-        void onStateChange(int progressState);
+        void onStateChange(int progressState, float position);
     }
 }
